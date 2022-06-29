@@ -10,10 +10,6 @@
             yylval = atof(yytext);
             return NUMBER;
     	}
-[a-z]	{
-            yylval = yytext[0] - 'a';
-            return VARIABLE;
-    	}
 pi		{return PI;  }
 sin 	{return SIN; }
 cos 	{return COS; }
@@ -28,10 +24,25 @@ floor	{return LGU; }
 lGuass	{return LGU; }
 abs		{return ABS; }
 
+[a-z]*	{
+
+			unsigned int seed = 131;
+			unsigned int hash = 0;
+			while (*yytext)
+			{
+				hash = hash * seed + (*yytext++);
+				hash %= 10007;
+			}
+            yylval = hash%10007;
+            return VARIABLE;
+    	}
+
 [ \t] ;
   
 \n  	{return EOL;}
- 
-. return yytext[0];
+
+[-+()%=/*^\n]	{return yytext[0];}
+
+. return yyerror("Invalid Input");
   
 %%
