@@ -1,3 +1,9 @@
+<!--
+Bedge reference:
+1. https://css-tricks.com/adding-custom-github-badges-to-your-repo (passed parameters in the url)
+2. https://badgen.net/ (supported icons collection)
+-->
+![my badge](https://badgen.net/badge/status/developing/red?icon=github)
 # CompilerRRRR
 編譯器器器器器
 
