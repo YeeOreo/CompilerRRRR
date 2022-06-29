@@ -1,14 +1,16 @@
 %{
 /* Definition section */
 #include<stdio.h>
-int flag=0;
+int noError=1;
 %}
 
 %token NUMBER
 
 %left '+' '-'
 
-%left '*' '/' '%' '^'
+%left '*' '/' '%'
+
+%left '^'
 
 %left '(' ')'
 
@@ -16,7 +18,8 @@ int flag=0;
 %%
 
 ArithmeticExpression: E{
-
+		if( noError ) 
+		
 		printf("\nResult=%d\n", $$);
 
 		return 0;
@@ -66,18 +69,16 @@ printf("\nEnter Any Arithmetic Expression which\
  Modulus and Round brackets:\n");
 
 yyparse();
-if(flag==0)
-printf("\nEntered arithmetic expression is Valid\n\n");
 }
 
 /*void yyerror()
 {
 printf("\nEntered arithmetic expression is Invalid\n\n");
-flag=1;
+noError=0;
 }*/
 
 void yyerror (char const *s)
 {
 fprintf (stderr, "%s\n", s);
-flag=1;
+noError=0;
 }
