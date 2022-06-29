@@ -1401,7 +1401,7 @@ yyreduce:
 /* Line 1455 of yacc.c  */
 #line 31 "tt.y"
     { if( noError ) {
-			if( (yyvsp[(1) - (1)]) > -EPS/10 && (yyvsp[(1) - (1)]) < EPS/10){
+			if( (yyvsp[(1) - (1)]) > -EPS && (yyvsp[(1) - (1)]) <= 0){
 				printf("%\nResult = 0\n");
 			}
 			else if( fabs( (yyvsp[(1) - (1)]) - ceil((yyvsp[(1) - (1)])) ) < EPS )

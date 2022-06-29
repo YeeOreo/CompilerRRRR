@@ -29,7 +29,7 @@ ArithmeticExpression:
 		
 statement:
 	E { if( noError ) {
-			if( $1 > -EPS && $1 < 0){
+			if( $1 > -EPS && $1 <= 0){
 				printf("%\nResult = 0\n");
 			}
 			else if( fabs( $1 - ceil($1) ) < EPS )
