@@ -95,7 +95,7 @@ E:	 E '+' E {$$=$1+$3;}
 //driver code
 void main()
 {
-	printf("\nCacultaor\n Now supported functions: + - * /  (modulo) ^ round brackets sin() cos() tan() sqrt() log() ln() exp() ceil() floor() abs() pi\n also support variable ex: this = 1\n");
+	printf("\nCacultaor\n Now supported functions: + - * /  (modulo) ^ round brackets sin() cos() tan() sqrt() log() ln() exp() ceil() floor() abs() pi\n also support variable ex: this = 1\n\n");
 	yyparse();
 }
 

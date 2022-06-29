@@ -434,9 +434,9 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    27,    27,    28,    33,    40,    43,    45,    47,    49,
-      51,    61,    63,    65,    67,    69,    71,    73,    75,    77,
-      79,    81,    83,    85,    87,    89,    91
+       0,    27,    27,    28,    31,    38,    41,    43,    45,    47,
+      49,    59,    61,    63,    65,    67,    69,    71,    73,    75,
+      77,    79,    81,    83,    85,    87,    89
 };
 #endif
 
@@ -1393,18 +1393,16 @@ yyreduce:
 
 /* Line 1455 of yacc.c  */
 #line 28 "tt.y"
-    {
-		
-		;}
+    {;}
     break;
 
   case 4:
 
 /* Line 1455 of yacc.c  */
-#line 33 "tt.y"
+#line 31 "tt.y"
     { if( noError ) {
 			if( fabs( (yyvsp[(1) - (1)]) - ceil((yyvsp[(1) - (1)])) ) < EPS )
-				printf("\nResult = %.0lf\n", (yyvsp[(1) - (1)]));
+				printf("\nResult = %.1lf\n", (yyvsp[(1) - (1)]));
 			else
 				printf("\nResult = %lf\n", (yyvsp[(1) - (1)]));
 		}
@@ -1414,42 +1412,42 @@ yyreduce:
   case 5:
 
 /* Line 1455 of yacc.c  */
-#line 40 "tt.y"
+#line 38 "tt.y"
     {sym[(int)(yyvsp[(1) - (3)])] = (yyvsp[(3) - (3)]);;}
     break;
 
   case 6:
 
 /* Line 1455 of yacc.c  */
-#line 43 "tt.y"
+#line 41 "tt.y"
     {(yyval)=(yyvsp[(1) - (3)])+(yyvsp[(3) - (3)]);;}
     break;
 
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 45 "tt.y"
+#line 43 "tt.y"
     {(yyval)=(yyvsp[(1) - (3)])-(yyvsp[(3) - (3)]);;}
     break;
 
   case 8:
 
 /* Line 1455 of yacc.c  */
-#line 47 "tt.y"
+#line 45 "tt.y"
     {(yyval)=-(yyvsp[(2) - (2)]);;}
     break;
 
   case 9:
 
 /* Line 1455 of yacc.c  */
-#line 49 "tt.y"
+#line 47 "tt.y"
     {(yyval)=(yyvsp[(1) - (3)])*(yyvsp[(3) - (3)]);;}
     break;
 
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 51 "tt.y"
+#line 49 "tt.y"
     { 
 			if ((yyvsp[(3) - (3)]) == 0){
 				yyerror("divide by zero");
@@ -1464,112 +1462,112 @@ yyreduce:
   case 11:
 
 /* Line 1455 of yacc.c  */
-#line 61 "tt.y"
+#line 59 "tt.y"
     {(yyval) = fmod((yyvsp[(1) - (3)]), (yyvsp[(3) - (3)]));;}
     break;
 
   case 12:
 
 /* Line 1455 of yacc.c  */
-#line 63 "tt.y"
+#line 61 "tt.y"
     {(yyval) = pow((yyvsp[(1) - (3)]), (yyvsp[(3) - (3)]));;}
     break;
 
   case 13:
 
 /* Line 1455 of yacc.c  */
-#line 65 "tt.y"
+#line 63 "tt.y"
     {(yyval) = (yyvsp[(2) - (3)]);;}
     break;
 
   case 14:
 
 /* Line 1455 of yacc.c  */
-#line 67 "tt.y"
+#line 65 "tt.y"
     {(yyval) = sin((yyvsp[(3) - (4)])*M_PI/180.0); ;}
     break;
 
   case 15:
 
 /* Line 1455 of yacc.c  */
-#line 69 "tt.y"
+#line 67 "tt.y"
     {(yyval) = cos((yyvsp[(3) - (4)])*M_PI/180.0);;}
     break;
 
   case 16:
 
 /* Line 1455 of yacc.c  */
-#line 71 "tt.y"
+#line 69 "tt.y"
     {(yyval) = tan((yyvsp[(3) - (4)])*M_PI/180.0);;}
     break;
 
   case 17:
 
 /* Line 1455 of yacc.c  */
-#line 73 "tt.y"
+#line 71 "tt.y"
     {(yyval) = sqrt((yyvsp[(3) - (4)]));;}
     break;
 
   case 18:
 
 /* Line 1455 of yacc.c  */
-#line 75 "tt.y"
+#line 73 "tt.y"
     {(yyval) = log10((yyvsp[(3) - (4)]));;}
     break;
 
   case 19:
 
 /* Line 1455 of yacc.c  */
-#line 77 "tt.y"
+#line 75 "tt.y"
     {(yyval) = log((yyvsp[(3) - (4)]));;}
     break;
 
   case 20:
 
 /* Line 1455 of yacc.c  */
-#line 79 "tt.y"
+#line 77 "tt.y"
     {(yyval) = exp((yyvsp[(3) - (4)])); ;}
     break;
 
   case 21:
 
 /* Line 1455 of yacc.c  */
-#line 81 "tt.y"
+#line 79 "tt.y"
     {(yyval) = floor((yyvsp[(3) - (4)])); ;}
     break;
 
   case 22:
 
 /* Line 1455 of yacc.c  */
-#line 83 "tt.y"
+#line 81 "tt.y"
     {(yyval) = ceil((yyvsp[(3) - (4)])); ;}
     break;
 
   case 23:
 
 /* Line 1455 of yacc.c  */
-#line 85 "tt.y"
+#line 83 "tt.y"
     {(yyval) = fabs((yyvsp[(3) - (4)])); ;}
     break;
 
   case 24:
 
 /* Line 1455 of yacc.c  */
-#line 87 "tt.y"
+#line 85 "tt.y"
     {(yyval) = M_PI;;}
     break;
 
   case 25:
 
 /* Line 1455 of yacc.c  */
-#line 89 "tt.y"
+#line 87 "tt.y"
     {(yyval) = (yyvsp[(1) - (1)]);;}
     break;
 
   case 26:
 
 /* Line 1455 of yacc.c  */
-#line 91 "tt.y"
+#line 89 "tt.y"
     {
 	(yyval) = sym[(int)(yyvsp[(1) - (1)])];;}
     break;
@@ -1577,7 +1575,7 @@ yyreduce:
 
 
 /* Line 1455 of yacc.c  */
-#line 1581 "tt.tab.c"
+#line 1579 "tt.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1789,13 +1787,13 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 95 "tt.y"
+#line 93 "tt.y"
 
 
 //driver code
 void main()
 {
-	printf("\nCacultaor\n Now supported functions: + - * /  (modulo) ^ round brackets sin() cos() tan() sqrt() log() ln() exp() ceil() floor() abs() pi\n also support variable ex: this = 1\n");
+	printf("\nCacultaor\n Now supported functions: + - * /  (modulo) ^ round brackets sin() cos() tan() sqrt() log() ln() exp() ceil() floor() abs() pi\n also support variable ex: this = 1\n\n");
 	yyparse();
 }
 
