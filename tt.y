@@ -1,0 +1,83 @@
+%{
+/* Definition section */
+#include<stdio.h>
+int flag=0;
+%}
+
+%token NUMBER
+
+%left '+' '-'
+
+%left '*' '/' '%' '^'
+
+%left '(' ')'
+
+/* Rule Section */
+%%
+
+ArithmeticExpression: E{
+
+		printf("\nResult=%d\n", $$);
+
+		return 0;
+
+		};
+E:E'+'E {$$=$1+$3;}
+
+|E'-'E {$$=$1-$3;}
+
+|E'*'E {$$=$1*$3;}
+
+|E'/'E { if ($3 == 0)
+          yyerror("divide by zero");
+        /*else
+          $$ = $1 / $3;*/
+      }
+
+|E'%'E {$$=$1%$3;}
+
+|E'^'E {
+		int result = 1;
+		int base = $1;
+		int n = $3;
+		while (n != 0) {
+			if (n & 1)
+				result = result * base;
+			base = base * base;
+			n >>= 1; 
+		}
+		$$ = result;
+		}
+
+|'('E')' {$$=$2;}
+
+| NUMBER {$$=$1;}
+
+;
+
+%%
+
+//driver code
+void main()
+{
+printf("\nEnter Any Arithmetic Expression which\
+ can have operations Addition,\
+ Subtraction, Multiplication, Division,\
+ Modulus and Round brackets:\n");
+
+yyparse();
+if(flag==0)
+printf("\nEntered arithmetic expression is Valid\n\n");
+}
+
+/*void yyerror()
+{
+printf("\nEntered arithmetic expression is Invalid\n\n");
+flag=1;
+}*/
+
+void yyerror (char const *s)
+{
+fprintf (stderr, "%s\n", s);
+flag=1;
+}

@@ -294,7 +294,7 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    2,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    4,    4,    4,
         4,    4,    4,    4,    4,    4,    4,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -359,19 +359,13 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 ".\\calculator_trail.l"
+#line 1 "tt.l"
 #define INITIAL 0
-#line 2 ".\\calculator_trail.l"
-   /* Declarations section */
-   /* C stuff(Headers, declarations, variables, etc.) */
+#line 2 "tt.l"
   #include<stdio.h>
-  #include "geeks_test.tab.h"  
+  #include "tt.tab.h"  
   extern int yylval;
-/* Definitions section */
-/* Regular expressions*/
-/* Rule Section */
-/* token specifications */
-#line 375 "lex.yy.c"
+#line 369 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -522,9 +516,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 13 ".\\calculator_trail.l"
+#line 7 "tt.l"
 
-#line 528 "lex.yy.c"
+#line 522 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -609,7 +603,7 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 14 ".\\calculator_trail.l"
+#line 8 "tt.l"
 {
           yylval=atoi(yytext);
           return NUMBER;
@@ -617,25 +611,25 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 18 ".\\calculator_trail.l"
+#line 12 "tt.l"
 ;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 20 ".\\calculator_trail.l"
+#line 14 "tt.l"
 return 0;
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 22 ".\\calculator_trail.l"
+#line 16 "tt.l"
 return yytext[0];
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 24 ".\\calculator_trail.l"
+#line 18 "tt.l"
 ECHO;
 	YY_BREAK
-#line 639 "lex.yy.c"
+#line 633 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1521,7 +1515,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 24 ".\\calculator_trail.l"
+#line 18 "tt.l"
 
 /* User subroutines section */ 
 /* C functions (can be main or others) */
