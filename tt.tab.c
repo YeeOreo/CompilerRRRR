@@ -406,8 +406,8 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    20,    20,    26,    28,    30,    32,    34,    40,    42,
-      55,    57
+       0,    20,    20,    26,    28,    30,    32,    34,    44,    46,
+      59,    61
 };
 #endif
 
@@ -1359,56 +1359,60 @@ yyreduce:
 
 /* Line 1455 of yacc.c  */
 #line 34 "tt.y"
-    { if ((yyvsp[(3) - (3)]) == 0)
-          yyerror("divide by zero");
-        /*else
-          $$ = $1 / $3;*/
-      ;}
+    { 
+			if ((yyvsp[(3) - (3)]) == 0){
+				yyerror("divide by zero");
+				(yyval) = 0;
+			}
+			else{
+				(yyval) = (yyvsp[(1) - (3)])/(yyvsp[(3) - (3)]);
+			}
+		;}
     break;
 
   case 8:
 
 /* Line 1455 of yacc.c  */
-#line 40 "tt.y"
+#line 44 "tt.y"
     {(yyval)=(yyvsp[(1) - (3)])%(yyvsp[(3) - (3)]);;}
     break;
 
   case 9:
 
 /* Line 1455 of yacc.c  */
-#line 42 "tt.y"
+#line 46 "tt.y"
     {
-		int result = 1;
-		int base = (yyvsp[(1) - (3)]);
-		int n = (yyvsp[(3) - (3)]);
-		while (n != 0) {
-			if (n & 1)
-				result = result * base;
-			base = base * base;
-			n >>= 1; 
-		}
-		(yyval) = result;
+			int result = 1;
+			int base = (yyvsp[(1) - (3)]);
+			int n = (yyvsp[(3) - (3)]);
+			while (n != 0) {
+				if (n & 1)
+					result = result * base;
+				base = base * base;
+				n >>= 1; 
+			}
+			(yyval) = result;
 		;}
     break;
 
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 55 "tt.y"
+#line 59 "tt.y"
     {(yyval)=(yyvsp[(2) - (3)]);;}
     break;
 
   case 11:
 
 /* Line 1455 of yacc.c  */
-#line 57 "tt.y"
+#line 61 "tt.y"
     {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 1412 "tt.tab.c"
+#line 1416 "tt.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1620,7 +1624,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 61 "tt.y"
+#line 65 "tt.y"
 
 
 //driver code
