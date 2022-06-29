@@ -1,14 +1,20 @@
 %{
 /* Definition section */
 #include<stdio.h>
+#define YYSTYPE double
+#define M_PI 3.1415926
+#define EPS 1e-6
+#include<math.h>
 int noError=1;
 %}
 
-%token NUMBER
+%token NUMBER SIN COS TAN SQRT LOG LN EXP UGU LGU
+
+%token EOL
 
 %left '+' '-'
 
-%left '*' '/' '%'
+%left '*' '/'
 
 %left '^'
 
@@ -17,21 +23,25 @@ int noError=1;
 /* Rule Section */
 %%
 
-ArithmeticExpression: E{
-		if( noError ) 
-		
-		printf("\nResult=%d\n", $$);
-
+ArithmeticExpression: 
+		|ArithmeticExpression E EOL{
+		if( noError ) {
+			if( abs( $2 - ceil($2) ) < EPS )
+				printf("\nResult = %.0lf\n", $2);
+			else
+				printf("\nResult = %lf\n", $2);
+		}
+		noError = 1;
 		};
-E:	 E'+'E {$$=$1+$3;}
+E:	 E '+' E {$$=$1+$3;}
 
-	|E'-'E {$$=$1-$3;}
+	| E '-' E {$$=$1-$3;}
 
-	| '-'E {$$=-$2;}
+	|  '-' E {$$=-$2;}
 
-	|E'*'E {$$=$1*$3;}
+	| E '*' E {$$=$1*$3;}
 
-	|E'/'E { 
+	| E '/' E { 
 			if ($3 == 0){
 				yyerror("divide by zero");
 				$$ = 0;
@@ -40,25 +50,32 @@ E:	 E'+'E {$$=$1+$3;}
 				$$ = $1/$3;
 			}
 		}
+		
+	| E '%' E			{$$ = fmod($1, $3);}
 
-	|E'%'E {$$=$1%$3;}
+	| E '^' E 			{$$ = pow($1, $3);}
 
-	|E'^'E {
-			int result = 1;
-			int base = $1;
-			int n = $3;
-			while (n != 0) {
-				if (n & 1)
-					result = result * base;
-				base = base * base;
-				n >>= 1; 
-			}
-			$$ = result;
-		}
+	| '(' E ')'			{$$ = $2;}
+	
+	| SIN  '(' E ')'	{$$ = sin($3*M_PI/180.0); }
+	
+	| COS  '(' E ')'	{$$ = cos($3*M_PI/180.0);}
+	
+	| TAN  '(' E ')'	{$$ = tan($3*M_PI/180.0);}
+	
+	| SQRT '(' E ')'	{$$ = sqrt($3);}
+	
+	| LOG '(' E ')'		{$$ = log10($3);}
+	
+	| LN '(' E ')'		{$$ = log($3);}
 
-	|'('E')' {$$=$2;}
+	| EXP '(' E ')'		{$$ = exp($3); }
+	
+	| LGU '(' E ')'		{$$ = floor($3); }
+	
+	| UGU '(' E ')'		{$$ = ceil($3); }
 
-	| NUMBER {$$=$1;}
+	| NUMBER	{$$ = $1;}
 
 ;
 
