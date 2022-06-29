@@ -68,7 +68,7 @@
 /* Copy the first part of user declarations.  */
 
 /* Line 189 of yacc.c  */
-#line 1 ".\\calculator_trail.y"
+#line 1 "calculator_trail.y"
 
 /* Definition section */
 #include<stdio.h>
@@ -1309,9 +1309,9 @@ yyreduce:
         case 2:
 
 /* Line 1455 of yacc.c  */
-#line 18 ".\\calculator_trail.y"
+#line 18 "calculator_trail.y"
     {
-
+  if(flag==0)
 		printf("\nResult=%d\n", (yyval));
 
 		return 0;
@@ -1322,53 +1322,53 @@ yyreduce:
   case 3:
 
 /* Line 1455 of yacc.c  */
-#line 25 ".\\calculator_trail.y"
+#line 25 "calculator_trail.y"
     {(yyval)=(yyvsp[(1) - (3)])+(yyvsp[(3) - (3)]);;}
     break;
 
   case 4:
 
 /* Line 1455 of yacc.c  */
-#line 27 ".\\calculator_trail.y"
+#line 27 "calculator_trail.y"
     {(yyval)=(yyvsp[(1) - (3)])-(yyvsp[(3) - (3)]);;}
     break;
 
   case 5:
 
 /* Line 1455 of yacc.c  */
-#line 29 ".\\calculator_trail.y"
+#line 29 "calculator_trail.y"
     {(yyval)=(yyvsp[(1) - (3)])*(yyvsp[(3) - (3)]);;}
     break;
 
   case 6:
 
 /* Line 1455 of yacc.c  */
-#line 31 ".\\calculator_trail.y"
+#line 31 "calculator_trail.y"
     { if ((yyvsp[(3) - (3)]) == 0)
-          yyerror("divide by zero");
-        /*else
-          $$ = $1 / $3;*/
+          yyerror("divided by zero");
+        else
+          (yyval) = (yyvsp[(1) - (3)]) / (yyvsp[(3) - (3)]);
       ;}
     break;
 
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 37 ".\\calculator_trail.y"
+#line 37 "calculator_trail.y"
     {(yyval)=(yyvsp[(1) - (3)])%(yyvsp[(3) - (3)]);;}
     break;
 
   case 8:
 
 /* Line 1455 of yacc.c  */
-#line 39 ".\\calculator_trail.y"
+#line 39 "calculator_trail.y"
     {(yyval)=(yyvsp[(2) - (3)]);;}
     break;
 
   case 9:
 
 /* Line 1455 of yacc.c  */
-#line 41 ".\\calculator_trail.y"
+#line 41 "calculator_trail.y"
     {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
@@ -1587,7 +1587,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 45 ".\\calculator_trail.y"
+#line 45 "calculator_trail.y"
 
 
 //driver code

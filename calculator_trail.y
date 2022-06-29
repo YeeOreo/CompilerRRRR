@@ -16,7 +16,7 @@ int flag=0;
 %%
 
 ArithmeticExpression: E{
-
+  if(flag==0)
 		printf("\nResult=%d\n", $$);
 
 		return 0;
@@ -29,9 +29,9 @@ E:E'+'E {$$=$1+$3;}
 |E'*'E {$$=$1*$3;}
 
 |E'/'E { if ($3 == 0)
-          yyerror("divide by zero");
-        /*else
-          $$ = $1 / $3;*/
+          yyerror("divided by zero");
+        else
+          $$ = $1 / $3;
       }
 
 |E'%'E {$$=$1%$3;}
