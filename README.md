@@ -1,49 +1,109 @@
 <!--
-Bedge reference:
+Badge reference:
 1. https://css-tricks.com/adding-custom-github-badges-to-your-repo (passed parameters in the url)
 2. https://badgen.net/ (supported icons collection)
 -->
-![my badge](https://badgen.net/badge/status/developing/red?icon=github)
+![my badge](https://badgen.net/badge/status/success/green?icon=github)
 # CompilerRRRR
 編譯器器器器器
 
-A "calculator" implemented with the lex and bison.
+# Introduction
+A "calculator" implemented with the Lex and Bison(Yacc's GNU version).
 
-目前我只做出了計算機(試做)
+This calculator including Arithmetic Expression which can have operations Such like：
+1. Addition 
+2. Subtraction
+3. Multiplication
+4. Division
 
-而且除0的時候還有BUG。
+Also support：
+1. Modulus 
+2. Round brackets
 
-不只這個BUG。大家可以幫忙DEBUG。TAT
+API Functions：
 
-如果有更好的project點子可以commit上來唷╰(*°▽°*)╯
+> Basic Mathematical Functions
 
-## Usage(on terminal)：
+\+
+
+\-
+
+\*
+
+/
+
+%
+
+> Constant
+
+pi：3.1415926
+
+> Trigonometric functions：
+
+sin()
+
+cos()
+
+tan()
+
+> Floor and ceiling functions
+
+ceil() = uGuass
+
+uGuass() = ceil()
+
+floor() = lGuass()
+
+lGuass() = floor()
+
+> Other Mathematical Functions
+
+abs()：Absolute value.
+
+sqrt()：Square root.
+
+log()：The logarithm of X to base 10.
+
+ln()：The logarithm of X to base 2.
+
+exp()：Natural logarithm.
+
+## Usage(on Windows Command Prompt)：
 flex calculator_trail.l
 
 > It should produces lex.yy.c
 
-bison -d calculator_trail.y
+bison -d Calculator.y
 
-> It should produces calculator_trail.tab.h and calculator_trail.tab.c
+> It should produces Calculator.tab.h and Calculator.tab.c
 
-gcc calculator_trail.tab.c lex.yy.c -lfl
+gcc -o Calculator Calculator.tab.c lex.yy.c -lfl
 
-> It should produces a.exe
+> It should produces Calculator.exe
 
-./a.exe
+./gcc -o Calculator.exe
 
 > It starts to run the calculator.
+
+> You can type any Arithmetic expression on terminal.
+
+## Usage_2(on Windows Command Prompt)：
+compile_and_run.bat Calculator
+
+> It should produces Calculator.tab.h, Calculator.tab.c, lex.yy.c and Calculator.exe.
+
+> Next it starts to run the calculator.
 
 > You can type any Arithmetic expression on terminal.
 
 example(omitted, this calculator still has BUGs.)
 ---
 
-# Cheat Sheet(you can "copy and paste" on your terminal):
-flex calculator_trail.l
+# Cheat Sheet(you can "copy and paste" on your Windows Command Prompt):
+flex Calculator.l
 
-bison -d calculator_trail.y
+bison -d Calculator.y
 
-gcc calculator_trail.tab.c lex.yy.c -lfl
+gcc Calculator.tab.c lex.yy.c -lfl
 
-./a.exe
+./Calculator.exe
