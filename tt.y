@@ -6,9 +6,10 @@
 #define EPS 1e-6
 #include<math.h>
 int noError=1;
+double sym[26];
 %}
 
-%token NUMBER SIN COS TAN SQRT LOG LN EXP UGU LGU
+%token NUMBER SIN COS TAN SQRT LOG LN EXP UGU LGU ABS PI VARIABLE
 
 %token EOL
 
@@ -24,15 +25,21 @@ int noError=1;
 %%
 
 ArithmeticExpression: 
-		|ArithmeticExpression E EOL{
-		if( noError ) {
-			if( abs( $2 - ceil($2) ) < EPS )
-				printf("\nResult = %.0lf\n", $2);
-			else
-				printf("\nResult = %lf\n", $2);
-		}
-		noError = 1;
+		|ArithmeticExpression statement EOL{
+		
 		};
+		
+statement:
+	E { if( noError ) {
+			if( fabs( $1 - ceil($1) ) < EPS )
+				printf("\nResult = %.0lf\n", $1);
+			else
+				printf("\nResult = %lf\n", $1);
+		}
+		noError = 1;}
+	| VARIABLE '=' E {sym[(int)$1] = $3;}
+	;
+
 E:	 E '+' E {$$=$1+$3;}
 
 	| E '-' E {$$=$1-$3;}
@@ -75,9 +82,15 @@ E:	 E '+' E {$$=$1+$3;}
 	
 	| UGU '(' E ')'		{$$ = ceil($3); }
 
-	| NUMBER	{$$ = $1;}
+	| ABS '(' E ')'		{$$ = fabs($3); }
+	
+	| PI		{$$ = M_PI;}
 
-;
+	| NUMBER	{$$ = $1;}
+	
+	|VARIABLE		{
+	$$ = sym[(int)$1];}
+	;
 
 %%
 
