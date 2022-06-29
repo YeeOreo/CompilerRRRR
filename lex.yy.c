@@ -359,9 +359,9 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 ".\\calculator_trail.l"
+#line 1 "calculator_trail.l"
 #define INITIAL 0
-#line 2 ".\\calculator_trail.l"
+#line 2 "calculator_trail.l"
    /* Declarations section */
    /* C stuff(Headers, declarations, variables, etc.) */
   #include<stdio.h>
@@ -522,7 +522,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 13 ".\\calculator_trail.l"
+#line 13 "calculator_trail.l"
 
 #line 528 "lex.yy.c"
 
@@ -609,7 +609,7 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 14 ".\\calculator_trail.l"
+#line 14 "calculator_trail.l"
 {
           yylval=atoi(yytext);
           return NUMBER;
@@ -617,22 +617,22 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 18 ".\\calculator_trail.l"
+#line 18 "calculator_trail.l"
 ;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 20 ".\\calculator_trail.l"
+#line 20 "calculator_trail.l"
 return 0;
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 22 ".\\calculator_trail.l"
+#line 22 "calculator_trail.l"
 return yytext[0];
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 24 ".\\calculator_trail.l"
+#line 24 "calculator_trail.l"
 ECHO;
 	YY_BREAK
 #line 639 "lex.yy.c"
@@ -1521,7 +1521,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 24 ".\\calculator_trail.l"
+#line 24 "calculator_trail.l"
 
 /* User subroutines section */ 
 /* C functions (can be main or others) */
