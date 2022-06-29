@@ -25,14 +25,12 @@ double sym[10008];
 %%
 
 ArithmeticExpression: 
-		|ArithmeticExpression statement EOL{
-		
-		};
+		|ArithmeticExpression statement EOL{};
 		
 statement:
 	E { if( noError ) {
 			if( fabs( $1 - ceil($1) ) < EPS )
-				printf("\nResult = %.0lf\n", $1);
+				printf("\nResult = %.1lf\n", $1);
 			else
 				printf("\nResult = %lf\n", $1);
 		}
