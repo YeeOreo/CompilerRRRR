@@ -72,7 +72,7 @@
 
 /* Definition section */
 #include<stdio.h>
-int flag=0;
+int noError=1;
 
 
 /* Line 189 of yacc.c  */
@@ -334,18 +334,18 @@ union yyalloc
 #endif
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  6
+#define YYFINAL  8
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   30
+#define YYLAST   32
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  12
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  3
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  10
+#define YYNRULES  11
 /* YYNRULES -- Number of states.  */
-#define YYNSTATES  20
+#define YYNSTATES  22
 
 /* YYTRANSLATE(YYLEX) -- Bison symbol number corresponding to YYLEX.  */
 #define YYUNDEFTOK  2
@@ -390,24 +390,24 @@ static const yytype_uint8 yytranslate[] =
    YYRHS.  */
 static const yytype_uint8 yyprhs[] =
 {
-       0,     0,     3,     5,     9,    13,    17,    21,    25,    29,
-      33
+       0,     0,     3,     5,     9,    13,    16,    20,    24,    28,
+      32,    36
 };
 
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
 static const yytype_int8 yyrhs[] =
 {
       13,     0,    -1,    14,    -1,    14,     4,    14,    -1,    14,
-       5,    14,    -1,    14,     6,    14,    -1,    14,     7,    14,
-      -1,    14,     8,    14,    -1,    14,     9,    14,    -1,    10,
-      14,    11,    -1,     3,    -1
+       5,    14,    -1,     5,    14,    -1,    14,     6,    14,    -1,
+      14,     7,    14,    -1,    14,     8,    14,    -1,    14,     9,
+      14,    -1,    10,    14,    11,    -1,     3,    -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    18,    18,    25,    27,    29,    31,    37,    39,    52,
-      54
+       0,    20,    20,    26,    28,    30,    32,    34,    44,    46,
+      59,    61
 };
 #endif
 
@@ -435,14 +435,14 @@ static const yytype_uint16 yytoknum[] =
 static const yytype_uint8 yyr1[] =
 {
        0,    12,    13,    14,    14,    14,    14,    14,    14,    14,
-      14
+      14,    14
 };
 
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     1,     3,     3,     3,     3,     3,     3,     3,
-       1
+       0,     2,     1,     3,     3,     2,     3,     3,     3,     3,
+       3,     1
 };
 
 /* YYDEFACT[STATE-NAME] -- Default rule to reduce with in state
@@ -450,29 +450,31 @@ static const yytype_uint8 yyr2[] =
    means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       0,    10,     0,     0,     2,     0,     1,     0,     0,     0,
-       0,     0,     0,     9,     3,     4,     5,     6,     7,     8
+       0,    11,     0,     0,     0,     2,     5,     0,     1,     0,
+       0,     0,     0,     0,     0,    10,     3,     4,     6,     7,
+       8,     9
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     3,     4
+      -1,     4,     5
 };
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
-#define YYPACT_NINF -6
+#define YYPACT_NINF -5
 static const yytype_int8 yypact[] =
 {
-      14,    -6,    14,    19,    21,     7,    -6,    14,    14,    14,
-      14,    14,    14,    -6,    -5,    -5,    -6,    -6,    -6,    -6
+      16,    -5,    16,    16,     6,    23,    -4,     9,    -5,    16,
+      16,    16,    16,    16,    16,    -5,    -4,    -4,    13,    13,
+      13,    -5
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -6,    -6,    -2
+      -5,    -5,    -2
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
@@ -482,26 +484,27 @@ static const yytype_int8 yypgoto[] =
 #define YYTABLE_NINF -1
 static const yytype_uint8 yytable[] =
 {
-       5,     9,    10,    11,    12,    14,    15,    16,    17,    18,
-      19,     7,     8,     9,    10,    11,    12,     1,    13,     6,
-       0,     0,     0,     0,     2,     7,     8,     9,    10,    11,
-      12
+       6,     7,    11,    12,    13,    14,     8,    16,    17,    18,
+      19,    20,    21,     9,    10,    11,    12,    13,    14,     1,
+      15,     2,    14,     0,     0,     0,     3,     9,    10,    11,
+      12,    13,    14
 };
 
 static const yytype_int8 yycheck[] =
 {
-       2,     6,     7,     8,     9,     7,     8,     9,    10,    11,
-      12,     4,     5,     6,     7,     8,     9,     3,    11,     0,
-      -1,    -1,    -1,    -1,    10,     4,     5,     6,     7,     8,
-       9
+       2,     3,     6,     7,     8,     9,     0,     9,    10,    11,
+      12,    13,    14,     4,     5,     6,     7,     8,     9,     3,
+      11,     5,     9,    -1,    -1,    -1,    10,     4,     5,     6,
+       7,     8,     9
 };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
    symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,     3,    10,    13,    14,    14,     0,     4,     5,     6,
-       7,     8,     9,    11,    14,    14,    14,    14,    14,    14
+       0,     3,     5,    10,    13,    14,    14,    14,     0,     4,
+       5,     6,     7,     8,     9,    11,    14,    14,    14,    14,
+      14,    14
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1315,12 +1318,11 @@ yyreduce:
         case 2:
 
 /* Line 1455 of yacc.c  */
-#line 18 "tt.y"
+#line 20 "tt.y"
     {
-
+		if( noError ) 
+		
 		printf("\nResult=%d\n", (yyval));
-
-		return 0;
 
 		;}
     break;
@@ -1328,78 +1330,89 @@ yyreduce:
   case 3:
 
 /* Line 1455 of yacc.c  */
-#line 25 "tt.y"
+#line 26 "tt.y"
     {(yyval)=(yyvsp[(1) - (3)])+(yyvsp[(3) - (3)]);;}
     break;
 
   case 4:
 
 /* Line 1455 of yacc.c  */
-#line 27 "tt.y"
+#line 28 "tt.y"
     {(yyval)=(yyvsp[(1) - (3)])-(yyvsp[(3) - (3)]);;}
     break;
 
   case 5:
 
 /* Line 1455 of yacc.c  */
-#line 29 "tt.y"
-    {(yyval)=(yyvsp[(1) - (3)])*(yyvsp[(3) - (3)]);;}
+#line 30 "tt.y"
+    {(yyval)=-(yyvsp[(2) - (2)]);;}
     break;
 
   case 6:
 
 /* Line 1455 of yacc.c  */
-#line 31 "tt.y"
-    { if ((yyvsp[(3) - (3)]) == 0)
-          yyerror("divide by zero");
-        /*else
-          $$ = $1 / $3;*/
-      ;}
+#line 32 "tt.y"
+    {(yyval)=(yyvsp[(1) - (3)])*(yyvsp[(3) - (3)]);;}
     break;
 
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 37 "tt.y"
-    {(yyval)=(yyvsp[(1) - (3)])%(yyvsp[(3) - (3)]);;}
+#line 34 "tt.y"
+    { 
+			if ((yyvsp[(3) - (3)]) == 0){
+				yyerror("divide by zero");
+				(yyval) = 0;
+			}
+			else{
+				(yyval) = (yyvsp[(1) - (3)])/(yyvsp[(3) - (3)]);
+			}
+		;}
     break;
 
   case 8:
 
 /* Line 1455 of yacc.c  */
-#line 39 "tt.y"
-    {
-		int result = 1;
-		int base = (yyvsp[(1) - (3)]);
-		int n = (yyvsp[(3) - (3)]);
-		while (n != 0) {
-			if (n & 1)
-				result = result * base;
-			base = base * base;
-			n >>= 1; 
-		}
-		(yyval) = result;
-		;}
+#line 44 "tt.y"
+    {(yyval)=(yyvsp[(1) - (3)])%(yyvsp[(3) - (3)]);;}
     break;
 
   case 9:
 
 /* Line 1455 of yacc.c  */
-#line 52 "tt.y"
-    {(yyval)=(yyvsp[(2) - (3)]);;}
+#line 46 "tt.y"
+    {
+			int result = 1;
+			int base = (yyvsp[(1) - (3)]);
+			int n = (yyvsp[(3) - (3)]);
+			while (n != 0) {
+				if (n & 1)
+					result = result * base;
+				base = base * base;
+				n >>= 1; 
+			}
+			(yyval) = result;
+		;}
     break;
 
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 54 "tt.y"
+#line 59 "tt.y"
+    {(yyval)=(yyvsp[(2) - (3)]);;}
+    break;
+
+  case 11:
+
+/* Line 1455 of yacc.c  */
+#line 61 "tt.y"
     {(yyval)=(yyvsp[(1) - (1)]);;}
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 1403 "tt.tab.c"
+#line 1416 "tt.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1611,30 +1624,24 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 58 "tt.y"
+#line 65 "tt.y"
 
 
 //driver code
 void main()
 {
-printf("\nEnter Any Arithmetic Expression which\
- can have operations Addition,\
- Subtraction, Multiplication, Division,\
- Modulus and Round brackets:\n");
+	printf("\nEnter Any Arithmetic Expression which\
+	 can have operations Addition,\
+	 Subtraction, Multiplication, Division,\
+	 Modulus and Round brackets:\n");
 
-yyparse();
-if(flag==0)
-printf("\nEntered arithmetic expression is Valid\n\n");
+	yyparse();
 }
 
-/*void yyerror()
-{
-printf("\nEntered arithmetic expression is Invalid\n\n");
-flag=1;
-}*/
+
 
 void yyerror (char const *s)
 {
-fprintf (stderr, "%s\n", s);
-flag=1;
+	fprintf (stderr, "%s\n", s);
+	noError=0;
 }

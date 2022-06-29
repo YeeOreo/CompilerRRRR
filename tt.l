@@ -1,7 +1,6 @@
 %{
   #include<stdio.h>
   #include "tt.tab.h"  
-  extern int yylval;
 %}
 
 %%
@@ -18,7 +17,3 @@
 %%
 /* User subroutines section */ 
 /* C functions (can be main or others) */
-int yywrap()
-{
- return 1;
-}
