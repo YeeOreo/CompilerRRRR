@@ -30,9 +30,9 @@ ArithmeticExpression:
 statement:
 	E { if( noError ) {
 			if( fabs( $1 - ceil($1) ) < EPS )
-				printf("\nResult = %.1lf\n", $1);
+				printf("\nResult = %.1lf\n\n", $1);
 			else
-				printf("\nResult = %lf\n", $1);
+				printf("\nResult = %lf\n\n", $1);
 		}
 		noError = 1;}
 	| VARIABLE '=' E {sym[(int)$1] = $3;}
@@ -95,7 +95,7 @@ E:	 E '+' E {$$=$1+$3;}
 //driver code
 void main()
 {
-	printf("\nCacultaor\n Now supported functions: + - * /  (modulo) ^ round brackets sin() cos() tan() sqrt() log() ln() exp() ceil() floor() abs() pi\n also support variable ex: this = 1\n\n");
+	printf("\nCacultaor\n Now supported functions: + - * /  (modulo) ^ round brackets sin() cos() tan() sqrt() log() ln() exp() ceil() floor() abs() pi\n also support variable ex: this = 1\n");
 	yyparse();
 }
 

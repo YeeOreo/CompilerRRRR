@@ -1402,9 +1402,9 @@ yyreduce:
 #line 31 "tt.y"
     { if( noError ) {
 			if( fabs( (yyvsp[(1) - (1)]) - ceil((yyvsp[(1) - (1)])) ) < EPS )
-				printf("\nResult = %.1lf\n", (yyvsp[(1) - (1)]));
+				printf("\nResult = %.1lf\n\n", (yyvsp[(1) - (1)]));
 			else
-				printf("\nResult = %lf\n", (yyvsp[(1) - (1)]));
+				printf("\nResult = %lf\n\n", (yyvsp[(1) - (1)]));
 		}
 		noError = 1;;}
     break;
@@ -1793,7 +1793,7 @@ yyreturn:
 //driver code
 void main()
 {
-	printf("\nCacultaor\n Now supported functions: + - * /  (modulo) ^ round brackets sin() cos() tan() sqrt() log() ln() exp() ceil() floor() abs() pi\n also support variable ex: this = 1\n\n");
+	printf("\nCacultaor\n Now supported functions: + - * /  (modulo) ^ round brackets sin() cos() tan() sqrt() log() ln() exp() ceil() floor() abs() pi\n also support variable ex: this = 1\n");
 	yyparse();
 }
 
