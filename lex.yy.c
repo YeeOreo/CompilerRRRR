@@ -394,12 +394,12 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "tt.l"
+#line 1 "Calculator.l"
 #define INITIAL 0
-#line 2 "tt.l"
+#line 2 "Calculator.l"
   #define YYSTYPE double
   #include<stdio.h>
-  #include "tt.tab.h" 
+  #include "Calculator.tab.h" 
   
 #line 405 "lex.yy.c"
 
@@ -552,7 +552,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 8 "tt.l"
+#line 8 "Calculator.l"
 
 #line 558 "lex.yy.c"
 
@@ -639,7 +639,7 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 9 "tt.l"
+#line 9 "Calculator.l"
 {
             yylval = atof(yytext);
             return NUMBER;
@@ -647,72 +647,72 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 13 "tt.l"
+#line 13 "Calculator.l"
 {return PI;  }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 14 "tt.l"
+#line 14 "Calculator.l"
 {return SIN; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 15 "tt.l"
+#line 15 "Calculator.l"
 {return COS; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 16 "tt.l"
+#line 16 "Calculator.l"
 {return TAN; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 17 "tt.l"
+#line 17 "Calculator.l"
 {return SQRT;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 18 "tt.l"
+#line 18 "Calculator.l"
 {return LOG; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 19 "tt.l"
+#line 19 "Calculator.l"
 {return LN;  }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 20 "tt.l"
+#line 20 "Calculator.l"
 {return EXP; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 21 "tt.l"
+#line 21 "Calculator.l"
 {return UGU; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 22 "tt.l"
+#line 22 "Calculator.l"
 {return UGU; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 23 "tt.l"
+#line 23 "Calculator.l"
 {return LGU; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 24 "tt.l"
+#line 24 "Calculator.l"
 {return LGU; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 25 "tt.l"
+#line 25 "Calculator.l"
 {return ABS; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 27 "tt.l"
+#line 27 "Calculator.l"
 {
 
 			unsigned int seed = 131;
@@ -728,27 +728,27 @@ YY_RULE_SETUP
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 40 "tt.l"
+#line 40 "Calculator.l"
 ;
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 42 "tt.l"
+#line 42 "Calculator.l"
 {return EOL;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 44 "tt.l"
+#line 44 "Calculator.l"
 {return yytext[0];}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 46 "tt.l"
+#line 46 "Calculator.l"
 return yyerror("Invalid Input");
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 48 "tt.l"
+#line 48 "Calculator.l"
 ECHO;
 	YY_BREAK
 #line 755 "lex.yy.c"
@@ -1637,4 +1637,4 @@ int main()
 	return 0;
 	}
 #endif
-#line 48 "tt.l"
+#line 48 "Calculator.l"
