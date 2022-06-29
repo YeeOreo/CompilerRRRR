@@ -29,10 +29,13 @@ ArithmeticExpression:
 		
 statement:
 	E { if( noError ) {
-			if( fabs( $1 - ceil($1) ) < EPS )
-				printf("\nResult = %.1lf\n\n", $1);
+			if( $1 > -EPS && $1 < EPS){
+				printf("%\nResult = 0\n");
+			}
+			else if( fabs( $1 - ceil($1) ) < EPS )
+				printf("\nResult = %.1lf\n", $1);
 			else
-				printf("\nResult = %lf\n\n", $1);
+				printf("\nResult = %lf\n", $1);
 		}
 		noError = 1;}
 	| VARIABLE '=' E {sym[(int)$1] = $3;}
