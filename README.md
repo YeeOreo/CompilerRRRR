@@ -13,17 +13,22 @@ A "calculator" implemented with the lex and bison.
 
 ## Usage(on terminal)：
 flex calculator_trail.l
-it should produces lex.yy.c
+
+> It should produces lex.yy.c
 
 bison -d calculator_trail.y
-it should produces calculator_trail.tab.h and calculator_trail.tab.c
+
+> It should produces calculator_trail.tab.h and calculator_trail.tab.c
 
 gcc calculator_trail.tab.c lex.yy.c -lfl
-it should produces a.exe
+
+> It should produces a.exe
 
 ./a.exe
-It starts to run the calculator.
-you can type any Arithmetic expression on terminal.
+
+> It starts to run the calculator.
+
+> You can type any Arithmetic expression on terminal.
 
 example(omitted, this calculator still has BUGs.)
 ---
