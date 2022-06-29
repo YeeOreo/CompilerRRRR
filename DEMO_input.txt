@@ -58,7 +58,7 @@ tan(60)
 以0為底
 1/((sin(60) / cos(60)) - tan(60))
 
-log
+log錯誤的輸入方式
 以10為底
 log10(100)
 
@@ -66,6 +66,16 @@ log10(100)
 log2(16)
 
 log10(10^8)
+
+log正確的輸入方式
+以10為底
+log(100)
+
+以2為底
+ln(16)
+
+log(10^8)
+
 
 高斯運算
 
@@ -77,9 +87,6 @@ ceil(-0.5)
 
 ceil(2.5)
 
-不是代數運算的字串(syntax error)
-
-A string but not an expression.
 
 代數運算
 

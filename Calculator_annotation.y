@@ -1,5 +1,6 @@
 %{
 /* Definition section */
+/* C stuff(Headers, declarations, variables, etc.) */
 #include<stdio.h>
 #define YYSTYPE double
 #define M_PI 3.1415926
@@ -8,6 +9,8 @@
 int noError=1;
 double sym[10008];
 %}
+/* Definitions section */
+/* Token Definitions, Token's type and Token's precedences. */
 
 %token NUMBER SIN COS TAN SQRT LOG LN EXP UGU LGU ABS PI VARIABLE
 
@@ -21,8 +24,9 @@ double sym[10008];
 
 %left '(' ')'
 
-/* Rule Section */
 %%
+/* Productions Section */
+/* The Grammar productions */
 
 ArithmeticExpression: 
 		|ArithmeticExpression statement EOL{};
@@ -94,6 +98,8 @@ E:	 E '+' E {$$=$1+$3;}
 	;
 
 %%
+/* User subroutines section */ 
+/* C functions (can be main or others) */
 
 //driver code
 void main()
