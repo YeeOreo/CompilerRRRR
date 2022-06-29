@@ -49,7 +49,10 @@
      EXP = 265,
      UGU = 266,
      LGU = 267,
-     EOL = 268
+     ABS = 268,
+     PI = 269,
+     VARIABLE = 270,
+     EOL = 271
    };
 #endif
 
