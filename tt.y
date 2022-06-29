@@ -6,7 +6,7 @@
 #define EPS 1e-6
 #include<math.h>
 int noError=1;
-double sym[26];
+double sym[10008];
 %}
 
 %token NUMBER SIN COS TAN SQRT LOG LN EXP UGU LGU ABS PI VARIABLE
@@ -97,11 +97,7 @@ E:	 E '+' E {$$=$1+$3;}
 //driver code
 void main()
 {
-	printf("\nEnter Any Arithmetic Expression which\
-	 can have operations Addition,\
-	 Subtraction, Multiplication, Division,\
-	 Modulus and Round brackets:\n");
-
+	printf("\nCacultaor\n Now supported functions: + - * /  (modulo) ^ round brackets sin() cos() tan() sqrt() log() ln() exp() ceil() floor() abs() pi\n also support variable ex: this = 1\n");
 	yyparse();
 }
 
